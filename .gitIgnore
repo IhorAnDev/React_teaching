@@ -4,3 +4,6 @@
 
 **/final/node_modules/
 **/final/yarn-debug.log
+
+**/start/node_modules/
+**/start/yarn-debug.log

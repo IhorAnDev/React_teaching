@@ -142,30 +142,3 @@ function getBooks() {
 function getBook(id) {
   return data.find((d) => d.id === id);
 }
-
-const book = getBook(1);
-book;
-
-const { title, pages, author, genres, hasMovieAdaptation, publicationDate } =
-  book;
-
-const [primaryGenre, secondaryGenre, ...restGenres] = genres;
-console.log(primaryGenre, secondaryGenre, "rest: ", restGenres);
-
-const updatedBook = {
-  ...book,
-  moviePublicationDate: "2020-01-01",
-};
-
-updatedBook;
-
-const result = [] && "This book has a movie adaptation.";
-
-// truthy: true, "0", {}, [], 1, "1",
-console.log([] && "Some string");
-
-// falsy: false, 0, "", undefined, null, NaN
-console.log(0 && "Some string");
-
-const spanishTranslate = book.translations.spanish || "Not translated";
-console.log(spanishTranslate);
