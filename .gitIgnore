@@ -1,2 +1,6 @@
-*/node_modules/
-*/yarn-debug
+**/node_modules/
+**/yarn-debug.log
+
+
+**/final/node_modules/
+**/final/yarn-debug.log
