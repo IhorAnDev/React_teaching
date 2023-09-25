@@ -219,7 +219,7 @@ function getBook(id) {
 
 // // const count = book.reviews.librarything.reviewsCount ?? " no data";
 // console.log(count);
-
+/* 
 function getTotalReviewCount(book) {
   const goodreads = book.reviews?.goodreads?.reviewsCount;
   const librarything = book.reviews?.librarything?.reviewsCount ?? 0;
@@ -309,4 +309,37 @@ const bookAfterUpdate = booksAfterDelete.map((book) =>
   book.id === 1 ? { ...book, pages: 1210 } : book
 );
 
-bookAfterUpdate;
+bookAfterUpdate; */
+/* 
+fetch("https://jsonplaceholder.typicode.com/todos")
+  .then((res) => res.json())
+  .then((data) => console.log(data));
+
+console.log("after fetch"); */
+
+async function getTodos() {
+  try {
+    console.log("Get resources");
+    const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+
+    // console.log(res);
+
+    if (!res.ok) {
+      throw new Error("Response was not ok");
+    }
+
+    const dataFromFetch = await res.json();
+
+    // console.log(dataFromFetch);
+
+    return dataFromFetch;
+  } catch (error) {
+    throw error;
+  } finally {
+    console.log("all resources were closed");
+  }
+}
+
+getTodos()
+  .then((d) => console.log(d))
+  .catch((error) => console.log(error.message));
