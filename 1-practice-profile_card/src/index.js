@@ -42,20 +42,20 @@ function Intro() {
 function SkillList() {
     return (
         <ul className="skill-list">
-            <Skill name="HTML + CSS" style={{backgroundColor: 'red'}} emoji="💪"/>
-            <Skill name="JavaScript" style={{backgroundColor: 'yellow'}} emoji="😎"/>
-            <Skill name="React" style={{backgroundColor: 'Green'}} emoji="🧠"/>
-            <Skill name="Git + GitHub" style={{backgroundColor: '#4324'}} emoji="👍"/>
-            <Skill name="Java" style={{backgroundColor: '#FD5'}} emoji="💪"/>
-            <Skill name="Python" style={{backgroundColor: '#FD5'}} emoji="👨‍🎓"/>
-            <Skill name="React Native" style={{backgroundColor: '#BAD7A4'}} emoji="😇"/>
+            <Skill name="HTML + CSS" color="red" emoji="💪"/>
+            <Skill name="JavaScript" color="yellow" emoji="😎"/>
+            <Skill name="React" color="Green" emoji="🧠"/>
+            <Skill name="Git + GitHub" color='#4324' emoji="👍"/>
+            <Skill name="Java" color='#FD5' emoji="💪"/>
+            <Skill name="Python" color='#FD5' emoji="👨‍🎓"/>
+            <Skill name="React Native" color='#BAD7A4' emoji="😇"/>
         </ul>
     )
 }
 
-function Skill({name, style, emoji}) {
+function Skill({name, color, emoji}) {
     return (
-        <li style={style} className="skill">
+        <li style={{backgroundColor: color}} className="skill">
             <span>{name}</span>
             <span>{emoji}</span>
         </li>
