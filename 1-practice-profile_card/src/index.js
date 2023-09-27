@@ -42,22 +42,22 @@ function Intro() {
 function SkillList() {
     return (
         <ul className="skill-list">
-            <Skill name="HTML + CSS" style={{backgroundColor: 'red'}} image="like.png"/>
-            <Skill name="JavaScript" style={{backgroundColor: 'yellow'}} image="done.png"/>
-            <Skill name="React" style={{backgroundColor: 'Green'}} image="muscle.png"/>
-            <Skill name="Git + GitHub" style={{backgroundColor: '#4324'}} image="like.png"/>
-            <Skill name="Java" style={{backgroundColor: '#FD5'}} image="expert.png"/>
-            <Skill name="Python" style={{backgroundColor: '#FD5'}} image="expert.png"/>
-            <Skill name="React Native" style={{backgroundColor: '#BAD7A4'}} image="expert.png"/>
+            <Skill name="HTML + CSS" style={{backgroundColor: 'red'}} emoji="💪"/>
+            <Skill name="JavaScript" style={{backgroundColor: 'yellow'}} emoji="😎"/>
+            <Skill name="React" style={{backgroundColor: 'Green'}} emoji="🧠"/>
+            <Skill name="Git + GitHub" style={{backgroundColor: '#4324'}} emoji="👍"/>
+            <Skill name="Java" style={{backgroundColor: '#FD5'}} emoji="💪"/>
+            <Skill name="Python" style={{backgroundColor: '#FD5'}} emoji="👨‍🎓"/>
+            <Skill name="React Native" style={{backgroundColor: '#BAD7A4'}} emoji="😇"/>
         </ul>
     )
 }
 
-function Skill({name, style, image}) {
+function Skill({name, style, emoji}) {
     return (
         <li style={style} className="skill">
-            <p>{name}</p>
-            <img src={image} alt={name}/>
+            <span>{name}</span>
+            <span>{emoji}</span>
         </li>
     )
 }
