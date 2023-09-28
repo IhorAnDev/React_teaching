@@ -9,11 +9,7 @@ function App() {
         <div className="card">
             <Avatar/>
             <div className="data">
-
                 <Intro/>
-                {/* Должен содержать один Skill компонент для каждого web dev навыка
-                 что у тебя есть, каждый компонент должен кастомизироваться пропсами (props)
-                 */}
                 <SkillList/>
             </div>
         </div>
