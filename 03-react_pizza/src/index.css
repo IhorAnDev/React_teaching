@@ -145,7 +145,7 @@ body {
 }
 
 .pizza.sold-out img {
-    filter: grayscale();
+    filter: grayscale(1);
     opacity: 0.8;
 }
 
