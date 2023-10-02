@@ -7,3 +7,6 @@
 
 **/start/node_modules/
 **/start/yarn-debug.log
+
+**/.idea/
+**/**/.idea/
