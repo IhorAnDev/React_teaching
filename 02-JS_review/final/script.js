@@ -140,76 +140,68 @@ function getBooks() {
 }
 
 function getBook(id) {
-  return data.find((d) => d.id === id);
+  return data.find((b) => b.id === id);
 }
 
-/* const book = getBook(3);
+const book = getBook(2);
+
 book;
 
-const { title, pages, author, genres, hasMovieAdaptation, publicationDate } =
+const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
   book;
 
+// const primaryGenre = genres[0];
+// const secondaryGenre = genres[1];
+
 const [primaryGenre, secondaryGenre, ...restGenres] = genres;
+
 console.log(primaryGenre, secondaryGenre, "rest: ", restGenres);
 
-const updatedBook = {
+const newGenres = [...genres, "epic fantasy"];
+newGenres;
+
+const updateBook = {
   ...book,
-  moviePublicationDate: "2020-01-01",
+  moviePublicationDate: "2001-12-19",
+  pages: 1210,
 };
+updateBook;
 
-updatedBook;
+const getYear = (str) => str.split("-")[0];
 
-const result = [] && "This book has a movie adaptation.";
+const summary = `${title}, a ${pages}-page long book, was written by ${author} and published in
+ ${getYear(publicationDate)}. The book has ${
+  hasMovieAdaptation ? "" : "not"
+} been adapted as a movie`;
+summary;
 
-// truthy: true, "0", {}, [], 1, "1",
-console.log([] && "Some string");
+const pagesRange = pages > 1000 ? "over a thousand" : "less than 1000";
 
-// falsy: false, 0, "", undefined, null, NaN
-console.log(0 && "Some string");
+pagesRange;
 
-const spanishTranslate = book.translations.spanish || "Not translated";
-console.log(spanishTranslate);
+// function getYear(str){
+//   return str.split("-")[0]
+// }
 
-const books = getBooks();
+// console.log(true && "Some string");
 
-const titles = books.map((book) => book.title);
-titles;
+// console.log(false && "Some string");
 
-const adventureBooks = books.filter((book) =>
-  book.genres.includes("adventure")
-);
-adventureBooks;
+// console.log(hasMovieAdaptation && "This book has a movie");
 
-// 1) books.reduce((acc, book) => acc + book.pages, 0); 0 + 1216 = 1216
-// 2) books.reduce((acc, book) => acc + book.pages, 1216); 1216 + 295 = 1511
-// 3) books.reduce((acc, book) => acc + book.pages, 1511); 1511 + 658 = 2169
-const pagesAllBooks = books.reduce((acc, book) => acc + book.pages, 0);
-pagesAllBooks;
+// if (hasMovieAdaptation && "") {
+//   console.log("I am here!");
+// }
 
-const booksAfterUpdate = books.map((book) =>
-  book.id === 1
-    ? {
-        ...book,
-        pages: 1400,
-      }
-    : book
-);
+// const reslut = [] && "This book has a movie";
+// reslut;
 
-booksAfterUpdate; */
+// console.log(true || "Some string");
+// console.log(false || "Some string");
 
-// const resultquery = fetch("https://jsonplaceholder.typicode.com/todos");
+const spanishTranslation = book.translations.spanish || "Not translated";
+console.log(spanishTranslation);
 
-async function getTodos() {
-  const result = await fetch("https://jsonplaceholder.typicode.com/todos");
-  const data = await result.json();
-
-  console.log("Inside await function");
-
-  return data;
-}
-
-const todos = getTodos();
-
-console.log(todos);
-
-console.log("Outside await function");
+console.log(book.reviews.librarything.reviewsCount);
+const countWrong = book.reviews.librarything.reviewsCount ??  "no data";
+countWrong;
