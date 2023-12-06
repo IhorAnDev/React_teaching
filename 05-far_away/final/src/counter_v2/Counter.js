@@ -21,9 +21,9 @@ export default function CounterV2() {
                 <span>Step: {step}</span>
             </div>
             <div>
-                <button onClick={() => setCount((c) => c - step)}> - </button>
-                <input type="text" value={count} onChange={(e) => setCount(Number(e.target.value))} />
-                <button onClick={() => setCount((c) => c + step)}> + </button>
+                <button onClick={() => setCount((c) => c - step)}> -</button>
+                <input type="text" value={count} onChange={(e) => setCount(Number(e.target.value))}/>
+                <button onClick={() => setCount((c) => c + step)}> +</button>
             </div>
             <p>
                 <span>{count === 0
@@ -36,7 +36,9 @@ export default function CounterV2() {
                     {date.toDateString()}
                 </span>
             </p>
-            <button onClick={resetHandler}>Reset</button>
+            {(count !== 0 || step !== 1) ? (<div>
+                <button onClick={resetHandler}>Reset</button>
+            </div>) : null}
         </div>
     )
 }
